@@ -1,6 +1,5 @@
 package com.example.fitapp.data.repository
 
-import android.util.Log
 import com.example.fitapp.data.entities.ExerciseDTO
 import com.example.fitapp.data.mappers.toDomain
 import com.example.fitapp.domain.entities.Exercise

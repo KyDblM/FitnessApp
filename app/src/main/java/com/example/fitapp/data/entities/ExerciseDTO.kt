@@ -1,6 +1,5 @@
 package com.example.fitapp.data.entities
 
-import com.example.fitapp.domain.entities.Exercise
 import kotlinx.serialization.Serializable
 
 @Serializable
