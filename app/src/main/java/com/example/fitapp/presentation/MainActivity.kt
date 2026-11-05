@@ -4,17 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.viewModels
+import dagger.hilt.android.AndroidEntryPoint
+import kotlin.getValue
 
-private lateinit var viewModel: ViewModel
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val viewModel: ViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
         enableEdgeToEdge()
-
         setContent {
 
         }

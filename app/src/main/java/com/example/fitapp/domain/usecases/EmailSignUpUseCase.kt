@@ -1,10 +1,12 @@
 package com.example.fitapp.domain.usecases
 
 import com.example.fitapp.domain.repository.SignUpRepository
-import io.github.jan.supabase.SupabaseClient
+import javax.inject.Inject
 
-class EmailSignUpUseCase(private val signUpRepository: SignUpRepository) {
-    suspend fun execute(database: SupabaseClient, email: String, password: String) {
-        return signUpRepository.emailSignUp(database, email, password)
+class EmailSignUpUseCase @Inject constructor(
+    private val signUpRepository: SignUpRepository
+) {
+    suspend fun execute(email: String, password: String) {
+        return signUpRepository.emailSignUp(email, password)
     }
 }

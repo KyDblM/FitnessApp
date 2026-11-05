@@ -7,10 +7,12 @@ import com.example.fitapp.domain.repository.ExerciseRepository
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.query.Columns
+import javax.inject.Inject
 
-class ExerciseRepositoryImpl : ExerciseRepository {
-    override suspend fun getAllExercises(database: SupabaseClient): List<Exercise> {
-
+class ExerciseRepositoryImpl @Inject constructor(
+    private val database: SupabaseClient
+) : ExerciseRepository {
+    override suspend fun getAllExercises(): List<Exercise> {
         return database
             .from("exercises")
             .select(

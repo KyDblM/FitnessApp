@@ -2,10 +2,12 @@ package com.example.fitapp.domain.usecases
 
 import com.example.fitapp.domain.entities.Exercise
 import com.example.fitapp.domain.repository.ExerciseRepository
-import io.github.jan.supabase.SupabaseClient
+import javax.inject.Inject
 
-class GetAllExercisesUseCase(private val exerciseRepository: ExerciseRepository) {
-    suspend fun execute(database: SupabaseClient) : List<Exercise> {
-        return exerciseRepository.getAllExercises(database)
+class GetAllExercisesUseCase @Inject constructor(
+    private val exerciseRepository: ExerciseRepository
+) {
+    suspend fun execute() : List<Exercise> {
+        return exerciseRepository.getAllExercises()
     }
 }
