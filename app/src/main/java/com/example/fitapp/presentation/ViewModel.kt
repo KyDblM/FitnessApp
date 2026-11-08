@@ -16,8 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class ViewModel @Inject constructor(
     private val getAllExercisesUseCase: GetAllExercisesUseCase,
-    private val emailSignInUseCase: EmailSignUpUseCase,
-    private val emailSignUpUseCase: EmailSignInUseCase
+    private val emailSignInUseCase: EmailSignInUseCase,
+    private val emailSignUpUseCase: EmailSignUpUseCase
 ): ViewModel() {
     private val _exercises = MutableStateFlow<List<Exercise>>(emptyList())
     val exercises: StateFlow<List<Exercise>> = _exercises.asStateFlow()
